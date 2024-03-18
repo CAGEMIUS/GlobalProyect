@@ -1,53 +1,62 @@
+<style>
+    .zoom-effect {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .zoom-effect:hover img {
+        transform: scale(1.1);
+        transition: transform 0.9s ease;
+    }
+</style>
+
 @extends('layouts.compra')
 
 @section('content')
-    <div class="container" style="margin-top: 120px">
+    <div class="container" style="margin-top: 120px; font-size: 20px;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Tienda</li>
+                <li class="breadcrumb-item"><a href="/shop">{{ __('Home store') }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ __('Shop') }}</li>
             </ol>
         </nav>
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-7">
-                        <h4>Productos</h4>
+                        <h4>{{ __('All brands') }}</h4>
                     </div>
                 </div>
                 <hr>
-                <div class="row">
-                    @foreach($products as $pro)
-                        <div class="col-lg-3">
-                            <div class="card" style="margin-bottom: 20px; height: auto;">
-                                <img src="/images/{{ $pro->image_path }}"
-                                     class="card-img-top mx-auto"
-                                     style="height: 150px; width: 150px;display: block;"
-                                     alt="{{ $pro->image_path }}"
-                                >
-                                <div class="card-body">
-                                    <a href=""><h6 class="card-title">{{ $pro->name }}</h6></a>
-                                    <p>${{ $pro->price }}</p>
-                                    <form action="{{ route('cart.store') }}" method="POST">
-                                        {{ csrf_field() }}
-                                        <input type="hidden" value="{{ $pro->id }}" id="id" name="id">
-                                        <input type="hidden" value="{{ $pro->name }}" id="name" name="name">
-                                        <input type="hidden" value="{{ $pro->price }}" id="price" name="price">
-                                        <input type="hidden" value="{{ $pro->image_path }}" id="img" name="img">
-                                        <input type="hidden" value="{{ $pro->slug }}" id="slug" name="slug">
-                                        <input type="hidden" value="1" id="quantity" name="quantity">
-                                        <div class="card-footer" style="background-color: white;">
-                                              <div class="row">
-                                                <button class="btn btn-secondary btn-sm" class="tooltip-test" title="add to cart">
-                                                    <i class="fa fa-shopping-cart"></i> agregar al carrito
-                                                </button>
-                                            </div>
+                <div class="teaser content-card">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-md-4 mb-3 mt-3">
+                                <div class="card text-center">
+                                    <a href="{{ url('/Postobon') }}" class="card-link" data-cmp-data-layer="...">
+                                        <div class="zoom-effect">
+                                            <img src="{{ asset('img/Empresas/E-postobon.png') }}" class="card-img-top img-fluid d-block" alt="...">
                                         </div>
-                                    </form>
+                                        <div class="card-body text-black">
+                                            <h3 class="card-title">Postobon</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3 mt-3">
+                                <div class="card text-center">
+                                    <a href="{{ url('/RedBull') }}" class="card-link" data-cmp-data-layer="...">
+                                        <div class="zoom-effect">
+                                            <img src="{{ asset('img/Empresas/E-redbull.png') }}" class="card-img-top img-fluid d-block" alt="...">
+                                        </div>
+                                        <div class="card-body text-black">
+                                            <h3 class="card-title">Red Bull</h3>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,10 @@
 <?php
 
+use App\Admin\Controllers\EmpresaController;
+use App\Admin\Controllers\ProductController;
 use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
+use OpenAdmin\Admin\Facades\Admin;
 
 Admin::routes();
 
@@ -12,5 +16,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
+    $router->resource('products', ProductController::class);
+    $router->resource('empresas', EmpresaController::class);
 
 });

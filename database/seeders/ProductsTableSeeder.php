@@ -20,8 +20,6 @@ class ProductsTableSeeder extends Seeder
             'price' => 15900,
             'shipping_cost' => 10500,
             'description' => 'Sabor Original Coca-Cola',
-            'category_id' => 1,
-            'brand_id' => 1,
             'stock'=> 100,
             'image_path' => 'Compra1.png'
         ]);
@@ -33,8 +31,6 @@ class ProductsTableSeeder extends Seeder
             'price' => 17999,
             'shipping_cost' => 12500,
             'description' => 'Leche de Almedras',
-            'category_id' => 1,
-            'brand_id' => 2,
             'stock'=> 150,
             'image_path' => 'Compra2.png'
         ]);
@@ -46,8 +42,6 @@ class ProductsTableSeeder extends Seeder
             'price' => 9599,
             'shipping_cost' => 7500,
             'description' => 'Coca-Cola Sin Azucar',
-            'category_id' => 2,
-            'brand_id' => 1,
             'stock'=> 280,
             'image_path' => 'Compra3.png'
         ]);
@@ -59,8 +53,6 @@ class ProductsTableSeeder extends Seeder
             'price' => 14500,
             'shipping_cost' => 10799,
             'description' => 'Jugo Piña y Mandarina',
-            'category_id' => 3,
-            'brand_id' => 3,
             'stock'=> 39,
             'image_path' => 'Compra4.png'
         ]);
@@ -72,8 +64,6 @@ class ProductsTableSeeder extends Seeder
             'price' => 14500,
             'shipping_cost' => 10799,
             'description' => 'Agua Mineral',
-            'category_id' => 4,
-            'brand_id' => 4,
             'stock'=> 67,
             'image_path' => 'Compra5.png'
         ]);
@@ -85,8 +75,6 @@ class ProductsTableSeeder extends Seeder
             'price' => 18599,
             'shipping_cost' => 9500,
             'description' => 'Gaseosa Quatro',
-            'category_id' => 5,
-            'brand_id' => 4,
             'stock'=> 85,
             'image_path' => 'Compra6.png'
         ]);
@@ -98,8 +86,6 @@ class ProductsTableSeeder extends Seeder
             'price' => 18599,
             'shipping_cost' => 9500,
             'description' => 'Gaseosa Quatro',
-            'category_id' => 5,
-            'brand_id' => 4,
             'stock'=> 85,
             'image_path' => 'Compra6.png'
         ]);

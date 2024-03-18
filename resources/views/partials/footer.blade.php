@@ -1,32 +1,31 @@
-<footer class="text-white" style="background-color: #000000;">
+<footer class="text-white" style="background-color: #F0314C;">
     <div class="container-fluid py-3">
         <div class="row">
-            <div class="col-md-4">
-                <h6 class="text-uppercase mb-4 font-weight-bold">{{ __('The Coca-Cola Company') }}</h6>
+            <div class="col-md-4 text-center">
+                <h1 class="text-uppercase mb-4 font-weight-bold">{{ __('Fresh-Drink') }}</h1>
                 <h3>{{ __('About us') }}</h3>
-                <p>{{ __('In 1886, Dr. John Pemberton served the world s first Coca-Cola.') }}</p>
-                <p> {{ __('then, we have not stopped surprising you.') }}</p>
+                <p>{{ __('We are a company dedicated to the sale of different drinks from all over the world, we help companies sell their products so that our customers can try new and tasty drinks.') }}</p>
+                <p>{{ __('Fresh-Drink') }}</p>
+                <p>{{ __('Update with new drinks') }}</p>
             </div>
-            <div class="col-md-4">
-                <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                <p><i class="fas fa-envelope me-3"></i> info@gmail.com</p>
-                <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            <div class="col-md-4 text-center">
+                <h6 class="text-uppercase mb-4 font-weight-bold">{{ __('Contact') }}</h6>
+                <p><i class="fas fa-home me-3"></i>{{ __('Bogotá, Colombia') }}</p>
+                <p><i class="fas fa-envelope me-3"></i>{{ __('Fresh-Drink@gmail.com') }}</p>
+                <p><i class="fas fa-phone me-3"></i>+ 061- 2378670</p>
+                <p><i class="fas fa-phone me-3"></i>+ 057- 3124708522</p>
             </div>
-            <div class="col-md-4">
-                <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+            <div class="col-md-4 text-center">
+                <h6 class="text-uppercase mb-4 font-weight-bold">{{ __('Follow us') }}</h6>
                 <a href="#!" class="btn btn-primary me-1"><i class="fab fa-facebook-f"></i></a>
                 <a href="#!" class="btn btn-primary me-1"><i class="fab fa-twitter"></i></a>
-                <a href="#!" class="btn btn-primary me-1"><i class="fab fa-google"></i></a>
                 <a href="#!" class="btn btn-primary me-1"><i class="fab fa-instagram"></i></a>
-                <a href="#!" class="btn btn-primary me-1"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#!" class="btn btn-primary me-1"><i class="fab fa-github"></i></a>
+                <a href="#!" class="btn btn-primary me-1"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        &copy; 2024 {{ __('Copyright:') }}
+        <a class="text-white" href="/">{{ __('Fresh-Drink') }}</a>
     </div>
 </footer>

@@ -63,4 +63,19 @@ Route::post('/remove', [CartController::class, 'remove'])->name('cart.remove');
 Route::post('/clear', [CartController::class, 'clear'])->name('cart.clear');
 
 
+
+//Routas de la vistas de las empresas
+Route::get('/Postobon', function () {
+    return view('Empresas.Postobon');
+})->name('Postobon');
+
+Route::get('/RedBull', function () {
+    return view('Empresas.RedBull');
+})->name('RedBull');
+
+//Ruta para que se muestre los productos en la vista
+Route::get('/Postobon', [CartController::class, 'postobon'])->name('Postobon');
+Route::get('/RedBull', [CartController::class, 'redbull'])->name('RedBull');
+
+
 require __DIR__.'/auth.php';

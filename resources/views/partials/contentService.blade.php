@@ -1,8 +1,8 @@
 <body class="d-flex justify-content-center align-items-center">
     <main class="text-center py-4">
-        <h1 class="display-1 text-danger mb-5" style="margin-top: 120px">Servicio al cliente de Coca-Cola</h1>
+        <h1 class="display-1 text-danger mb-5" style="margin-top: 120px">Servicio al cliente</h1>
         <div class="categorias d-flex align-items-center justify-content-center mb-5">
-            <img src="../img/gifservicecliet.gif" alt="gif" class="me-4" style="width: 25%;">
+            <img src="../img/1.jpg" alt="gif" class="me-4" style="width: 25%;">
             <h2 class="text-start">Las mejores soluciones para ti</h2>
         </div>
         <h3 class="text-center text-danger mb-5">Si tiene alguna duda, queja o reclamo. Comuníquese a las siguientes líneas de atención</h3>
