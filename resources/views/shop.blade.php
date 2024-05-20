@@ -55,6 +55,30 @@
                                     </a>
                                 </div>
                             </div>
+                            <div class="col-md-4 mb-3 mt-3">
+                                <div class="card text-center">
+                                    <a href="{{ url('/Pepsi') }}" class="card-link" data-cmp-data-layer="...">
+                                        <div class="zoom-effect">
+                                            <img src="{{ asset('img/Empresas/E-pepsi.png') }}" class="card-img-top img-fluid d-block" alt="...">
+                                        </div>
+                                        <div class="card-body text-black">
+                                            <h3 class="card-title">Pepsi</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3 mt-3">
+                                <div class="card text-center">
+                                    <a href="{{ url('/Manantial') }}" class="card-link" data-cmp-data-layer="...">
+                                        <div class="zoom-effect">
+                                            <img src="{{ asset('img/Empresas/E-manantialAgua.png') }}" class="card-img-top img-fluid d-block" alt="...">
+                                        </div>
+                                        <div class="card-body text-black">
+                                            <h3 class="card-title">El manantial</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -62,3 +86,4 @@
         </div>
     </div>
 @endsection
+

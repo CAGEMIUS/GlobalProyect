@@ -3,7 +3,17 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\BuyerController;
+use App\Http\Controllers\MercadoPagoController;
+use App\Http\Middleware\AuthenticateCheckout;
+use App\Http\Middleware\AuthenticateCompletado;
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,11 +28,32 @@ use App\Http\Controllers\AdminController;
 // Main page
 Route::get('/', function () {
     return view('layouts.welcome');
-})->name('welcome');;
+})->name('welcome');
+
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout')->middleware(AuthenticateCheckout::class);
 
 Route::get('/service', function () {
     return view('layouts.service');
 })->name('service');
+
+
+Route::get('/checkcompra', function () {
+    return view('checkcompra');
+})->name('checkcompra')->middleware(AuthenticateCheckout::class);
+
+Route::get('/checkoutpay', function () {
+    return view('checkoutpay');
+})->name('checkoutpay')->middleware(AuthenticateCheckout::class);
+
+Route::get('/completado', function () {
+    return view('completado');
+})->name('completado')->middleware('auth.completado');
+
+Route::get('/fallo', function () {
+    return view('fallo');
+})->name('fallo')->middleware(AuthenticateCheckout::class);
 
 
 // login page
@@ -73,9 +104,38 @@ Route::get('/RedBull', function () {
     return view('Empresas.RedBull');
 })->name('RedBull');
 
+Route::get('/Pepsi', function () {
+    return view('Empresas.Pepsi');
+})->name('Pepsi');
+
 //Ruta para que se muestre los productos en la vista
 Route::get('/Postobon', [CartController::class, 'postobon'])->name('Postobon');
+Route::get('/pedidos', [CartController::class, 'pedidos'])->name('pedidos');
 Route::get('/RedBull', [CartController::class, 'redbull'])->name('RedBull');
+Route::get('/Pepsi', [CartController::class, 'pepsi'])->name('Pespsi');
+Route::get('/Manantial', [CartController::class, 'manantial'])->name('Manantial');
+
+Route::get('/checkcompra', [CartController::class, 'checkcompra'])->name('checkcompra')->middleware(AuthenticateCheckout::class);
+Route::get('/checkoutpay', [CartController::class, 'checkoutpay'])->name('checkoutpay')->middleware(AuthenticateCheckout::class);
+Route::get('/completado', [CartController::class, 'completado'])->name('completado')->middleware('auth.completado');
+
+
+
+Route::get('/checkout', [PaymentController::class, 'index'])->name('checkout')->middleware(AuthenticateCheckout::class);;
+Route::post('charge', [PaymentController::class, 'charge'])->name('charge');
+Route::get('success', [PaymentController::class, 'success'])->name('success');
+Route::get('error', [PaymentController::class, 'error'])->name('error');
+
+
+
+
+Route::post('/guardar-datos', [BuyerController::class, 'store'])->name('datos.store');
+Route::get('/checkout', [BuyerController::class, 'users'])->name('checkout')->middleware(AuthenticateCheckout::class);
+Route::get('/checkcompra', [BuyerController::class, 'showCompras'])->name('checkcompra')->middleware(AuthenticateCheckout::class);
+
+
+
+
 
 
 require __DIR__.'/auth.php';

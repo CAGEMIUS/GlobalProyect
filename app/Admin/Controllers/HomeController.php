@@ -14,15 +14,12 @@ class HomeController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->css_file(Admin::asset("open-admin/css/pages/dashboard.css"))
             ->title('Dashboard')
-            ->description('hola')
-            ->row(Dashboard::title())
+            ->description('Admin Console Fresk-Drink')
+            
             ->row(function (Row $row) {
 
-                $row->column(4, function (Column $column) {
-                    $column->append(Dashboard::environment());
-                });
+                
 
                 $row->column(4, function (Column $column) {
                     $column->append(Dashboard::extensions());

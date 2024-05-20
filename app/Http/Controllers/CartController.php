@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth; 
+
 
 class CartController extends Controller
 {
@@ -15,26 +17,74 @@ class CartController extends Controller
         return view('shop')->withTitle('E-COMMERCE STORE | SHOP')->with(['products' => $products]);
     }
 
-    //Vista postobon
+
+    public function completado()
+    {   
+    $payer_id = Auth::id();
+    $cleanCar = \Cart::clear();
+    
+    return view('completado', compact('payer_id', 'cleanCar'));
+    }
+
+
+
+    //Logica para que se pueda ves los productos en diferentes vistas.
+    public function getProductsView($viewName)
+    {
+        $products = Product::all();
+        $cartCollection = \Cart::getContent();
+        $payer_id = Auth::id();
+        // dd($products); // Esto te permite verificar los productos obtenidos
+
+         // Pasar las variables $products y $cartCollection a la vista
+        return view($viewName)->with([
+            'title' => 'E-COMMERCE STORE | ' . $viewName,
+            'products' => $products,
+            'cartCollection' => $cartCollection,
+            'payer_id ' =>  $payer_id,
+        ]);
+    }
+
     public function postobon()
     {
-        $products = Product::all();
-        // dd($products); // Esto te permite verificar los productos obtenidos
-
-        // Pasar la variable $products a la vista 'Postobon'
-        return view('Empresas.Postobon')->withTitle('E-COMMERCE STORE | Postobon')->with(['products' => $products]);
+        return $this->getProductsView('Empresas.Postobon');
     }
 
-    //Vista Red Bull
     public function redbull()
     {
-        $products = Product::all();
-        // dd($products); // Esto te permite verificar los productos obtenidos
-
-        // Pasar la variable $products a la vista 'Postobon'
-        return view('Empresas.RedBull')->withTitle('E-COMMERCE STORE | Postobon')->with(['products' => $products]);
+        return $this->getProductsView('Empresas.RedBull');
     }
 
+    public function pepsi()
+    {
+        return $this->getProductsView('Empresas.Pepsi');
+    }
+
+    public function manantial()
+    {
+        return $this->getProductsView('Empresas.Manantial');
+    }
+
+    public function pedidos()
+    {
+        return $this->getProductsView('pedidos');
+    }
+
+    public function checkcompra()
+    {
+        return $this->getProductsView('checkcompra');
+    }
+
+
+    public function checkoutpay()
+    {
+        return $this->getProductsView('checkoutpay');
+    }
+    
+
+    /**
+     * Logica del carrito de compras
+     */
     public function cart() 
     {
         $cartCollection = \Cart::getContent();

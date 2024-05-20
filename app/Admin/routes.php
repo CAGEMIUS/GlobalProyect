@@ -18,5 +18,10 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('products', ProductController::class);
     $router->resource('empresas', EmpresaController::class);
-
+    $router->resource('buyers', BuyerController::class);
+    $router->resource('product-pays', ProductPayController::class);
+    $router->resource('payments', PaymentController::class);
+    $router->resource('estados', EstadoController::class);
+    $router->resource('mercado-pagos', MercadoPagoController::class);
+    
 });

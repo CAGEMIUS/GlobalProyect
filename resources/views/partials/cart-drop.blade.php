@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <img src="/uploads/{{ $item->attributes->image }}"
-                         style="width: 120px; height: 120px;"
+                         style="width: 50px; height: 150px;"
                     >
                 </div>
                 <div class="fonst-b col-lg-6">
@@ -37,7 +37,7 @@
                     <br><small>{{ __('Quantity: ') }} {{$item->quantity}}</small>
                 </div>
                 <div class=" fonst-b col-lg-3">
-                    <p>${{ \Cart::get($item->id)->getPriceSum() }} Pesos</p>
+                    <p><b>{{ __('Price: ') }}</b> ${{ number_format(\Cart::get($item->id)->getPriceSum(), 2, ',', '.') }} Pesos</p>
                 </div>
                 <hr>
             </div>
@@ -47,7 +47,7 @@
     <li class="list-group-item">
         <div class="row">
             <div class="fonst-a col-lg-10">
-                <b>{{ __('Total: ') }} </b>${{ \Cart::getTotal() }} Pesos
+                <b>{{ __('Total: ') }} </b>${{ number_format(\Cart::getTotal(), 2, ',', '.') }} Pesos
             </div>
             <div class="col-lg-2">
                 <form action="{{ route('cart.clear') }}" method="POST">

@@ -53,15 +53,15 @@
                                             <h6 class="dropdown-item text-warning " href="{{ route('profile.edit') }}"><b>{{ Auth::user()->email }}</b></h6>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item text-warning " href="{{ route('profile.edit') }}"><b>{{ __('Profile') }}</b></a>
+                                            <a class="dropdown-item text-warning " href="{{ route('profile.edit') }}"><b>{{ __('Your profile') }}</b></a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item text-warning " href="{{ route('profile.edit') }}"><b>{{ __('Your orders') }}</b></a>
+                                            <a class="dropdown-item text-warning " href="{{ route('checkcompra') }}"><b>{{ __('Your orders') }}</b></a>
                                         </li>
                                         <li>
                                             <form method="POST" action="{{ route('logout') }}">
                                                 @csrf
-                                                <button type="submit" class="dropdown-item text-warning "><b>{{ __('Log Out') }}</b></button>
+                                                <button type="submit" class="dropdown-item text-warning "><b>{{ __('Logout') }}</b></button>
                                             </form>
                                         </li>
                                     </div>

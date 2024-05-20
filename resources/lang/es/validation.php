@@ -117,6 +117,7 @@ return [
     'uploaded'             => 'El campo :attribute no se pudo subir.',
     'url'                  => 'El formato del campo :attribute es inválido.',
     'uuid'                 => 'El campo :attribute debe ser un UUID válido.',
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -150,6 +151,7 @@ return [
         'name' => 'nombre',
         'email' => 'email',
         'password' => 'contraceña'
+        
     ],
 
 ];

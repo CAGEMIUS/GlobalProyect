@@ -60,8 +60,8 @@
                         <div class="col-lg-5">
                             <p>
                                 <b class="card-title"><a href="/shop/{{ $item->attributes->slug }}">{{ $item->name }}</a></b><br>
-                                <b>{{ __('Price: ') }} </b>${{ $item->price }} Pesos<br>
-                                <b>{{ __('Sub Total: ') }}</b>${{ \Cart::get($item->id)->getPriceSum() }} Pesos<br>
+                                <b>{{ __('Price: ') }} </b> ${{ number_format($item->price , 2, ',', '.') }} Pesos<br>
+                                <b>{{ __('Sub Total: ') }}</b> ${{ number_format(\Cart::get($item->id)->getPriceSum() , 2, ',', '.') }} Pesos<br>
                                 <b>{{ __('Available Stock: ') }}</b>{{ $productsStock[$item->id] }} units
                                 {{-- <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }} --}}
                             </p>
@@ -97,34 +97,34 @@
                 <div class="col-lg-5">
                     <div class="card">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><b>{{ __('Total: ') }} </b>${{ \Cart::getTotal() }} Pesos</li>
+                            <li class="list-group-item"><b>{{ __('Total: ') }} </b>$ {{ number_format(\Cart::getTotal() , 2, ',', '.') }} Pesos</li>
                         </ul>
                     </div>
                     <br>
                     <a href="/shop" class="boton btn btn-outline-primary text-light">{{ __('Continue in store') }}</a>
                     @guest
-                        <a href="/checkout" class="boton btn btn-success" data-toggle="modal" data-target="#customAlertModal">{{ __('Proceed to Checkout') }}</a>
+                        <a href="/pedidos" class="boton btn btn-success" data-toggle="modal" data-target="#customAlertModal">{{ __('Proceed to Checkout') }}</a>
                         <!-- Modal para la alerta personalizada -->
                         <div class="modal fade" id="customAlertModal" tabindex="-1" aria-labelledby="customAlertModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="customAlertModalLabel">You need to be logged in</h5>
+                                        <h5 class="modal-title text-danger" id="customAlertModalLabel">{{ __('You need to be logged in') }}</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        You need to be logged in to proceed to checkout.
+                                        {{ __('You need to be logged in to proceed to checkout.') }}
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="/login" class="btn btn-primary">Login</a>
-                                        <a href="/register" class="btn btn-secondary">Register</a>
+                                        <a href="/login" class="btn btn-primary">{{ __('Log in') }}</a>
+                                        <a href="/register" class="btn btn-secondary bg-danger">{{ __('Register') }}</a>
                                     </div>
                                 </div>
                             </div>
                     @else
-                        <a href="/checkout" class="boton btn btn-success">{{ __('Proceed to Checkout') }}</a>
+                        <a href="/checkout" class="boton btn btn-success" >{{ __('Proceed to Checkout') }}</a>
                     @endguest
                 </div>
             @endif

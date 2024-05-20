@@ -65,7 +65,6 @@ class ProductController extends AdminController
         $show->field('image', __('Image'));
         $show->field('empresa.name', __('Empresa')); // Accede al nombre de la empresa relacionada
         $show->field('empresa.NIT', __('Empresa NIT')); // Accede al NIT de la empresa relacionada
-        // Agrega cualquier otro campo de la empresa que desees mostrar
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 

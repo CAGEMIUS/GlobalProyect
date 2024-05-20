@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Actualizate con nuevas bebidas Fresh-Drink 😍</title>
+        <title>{{ __('Stay updated with new Fresh-Drink beverages 😍') }}</title>
         <!-- Icono de la pagina-->
         <link rel="icon" href="../img/icono.png">
         <title>{{ __('The drink that refreshes the entire world | Coca-Cola') }}</title>

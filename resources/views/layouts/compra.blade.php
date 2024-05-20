@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Icono de la pagina-->
     <link rel="icon" href="../img/icono.png">
-    <title>Tienda Fresh-Drink 😍</title>
+    <title>{{ __('Shop Fresh-Drink 😍') }}</title>
      <!-- Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,6 +16,7 @@
     <link href="https://db.onlinewebfonts.com/c/2def107af3e4eeb88b5ca50c3320ae0a?family=TCCC-UnityHeadline+Regular" rel="stylesheet">
     <!-- Iconos del pie de pagina-->
     <script src="https://kit.fontawesome.com/6868c404bc.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
 <div id="app">

@@ -47,11 +47,10 @@
                   <a href="/co/es/offerings/coke-studio" class="card-link" data-cmp-data-layer="...">
                       <img src="{{ asset('img/Empresas/E-postobon.png') }}" class="card-img-top img-fluid d-block" alt="...">
                       <div class="card-body text-black">
-                          <h3 class="card-title">Psotobom</h3>
+                          <h3 class="card-title">Postobón</h3>
                           <div class="card-text">
-                              <p>Enciende tu chispa de creatividad. Descubre la galería virtual de Coca‑Cola.</p>
+                              <p>{{ __('Spark your creativity. Discover our products in the store.') }}</p>
                           </div>
-                          <p class="btn btn-danger">Descúbrelo</p>
                       </div>
                   </a>
               </div>
@@ -63,9 +62,8 @@
                       <div class="card-body text-black">
                           <h3 class="card-title">Red Bull</h3>
                           <div class="card-text">
-                              <p>Experimenta la magia de la música</p>
+                              <p>{{ __('Experience the magic of Red Bull energy.') }}</p>
                           </div>
-                          <p class="btn btn-danger">Descúbrelo</p>
                       </div>
                   </a>
               </div>

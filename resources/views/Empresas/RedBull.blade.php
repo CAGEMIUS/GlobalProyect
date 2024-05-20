@@ -12,14 +12,15 @@
     .card-title {
         text-align: center;
         color: #F0314C;
-        font-size: 30px;
+        font-size: 25px;
     }
+
 </style>
 
 @extends('layouts.compra')
 
 @section('content')
-    <div class="container" style="margin-top: 120px; font-size: 20px;">
+    <div class="container" style="margin-top: 120px; font-size: 20px; ">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/shop">{{ __('Home store') }}</a></li>
@@ -37,13 +38,13 @@
                 <hr>
                 <div class="row">
                     @foreach($products as $pro)
-                        @if(isset($pro->empresa) && $pro->empresa->name == 'Red Bull')
+                        @if(isset($pro->empresa) && $pro->empresa->name == 'Red Bull Colombia SAS')
                             <div class="col-lg-3">
-                                <div class="card zoom-effect" style="margin-bottom: 20px; height: auto; border: 3px solid #F0314C;">
-                                    <img src="/uploads/{{ $pro->image}}" class="card-img-top mx-auto" style="height: 150px; width: 150px;display: block;" alt="{{ $pro->image}}">
+                                <div class="card zoom-effect" style="margin-bottom: 20px; height: auto; border: 3px solid #F0314C; ">
+                                    <img src="/uploads/{{ $pro->image}}" class="card-img-top mx-auto" style="height: 300px; width: auto; display: block;" alt="{{ $pro->image}}">
                                     <div class="card-body">
                                         <a href="#"><h6 class="card-title">{{ $pro->name }}</h6></a>
-                                        <p style="font-size: 20px; text-align: center;">${{ $pro->price }} Pesos</p>
+                                        <p style="font-size: 20px; text-align: center;">{{ __('Price: ') }} $ {{ number_format($pro->price, 2, ',', '.') }} Pesos</p>
                                         <form action="{{ route('cart.store') }}" method="POST">
                                             {{ csrf_field() }}
                                             <input type="hidden" value="{{ $pro->id }}" id="id" name="id">
